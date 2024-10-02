@@ -4,8 +4,8 @@ import DropDown from "./DropDown"
 const HorizontalCards = ({ data }) => {
   return (
     <div className='w-full h-[50vh] p-5'>
-      <div className=" flex justify-between">
-        <h1 className='text-3xl text-zinc-400 font-semibold mb-5'>Trending</h1>
+      <div className=" flex justify-between  mb-5">
+        <h1 className='text-3xl text-zinc-400 font-semibold'>Trending</h1>
         <DropDown title={"FIlter"} options={["TV", "Movie", "All"] }></DropDown>
       </div>
       <div className='w-full h-[50vh] flex overflow-scroll'>
