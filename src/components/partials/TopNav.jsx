@@ -24,18 +24,18 @@ const TopNav = () => {
 
   return (
     <>
-      <div className='w-full h-[10vh] relative flex justify-start items-center  ml-[20%]'>
+      <div className='w-full h-[10vh] relative flex justify-start items-center pl-[25%]'>
 
         <i className="ri-search-line text-2xl text-zinc-400 cursor-pointer"></i>
 
         <input
           onChange={(e) => setquery(e.target.value)}
           value={query}
-          className='w-[45%] mx-10 p-5 text-xl text-white outline-none bg-transparent' type="text" placeholder='Search any movie, season or artist' />
+          className='w-[56%] mx-10 p-5 text-xl text-white outline-none bg-transparent' type="text" placeholder='Search any movie, season or artist' />
 
         {query.length > 0 && <i onClick={() => setquery("")} className="ri-close-fill text-2xl text-zinc-400 cursor-pointer"></i>}
 
-        <div className='absolute w-[50%] max-h-[50vh] bg-zinc-200 top-[100%] overflow-auto rounded'>
+        <div className='absolute w-[50%] max-h-[50vh] bg-zinc-200 top-[100%] left-[28%] overflow-auto rounded'>
 
           {searches?.map((s, i) => (
             <Link key={i} className='hover:text-black hover:bg-zinc-300 font-semibold text-zinc-600 p-10 w-[100%] flex justify-start items-center border-zinc-100 border-b-2'>
