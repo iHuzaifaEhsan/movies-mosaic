@@ -4,12 +4,14 @@ import SideNav from './partials/SideNav'
 import TopNav from './partials/TopNav'
 import Header from './partials/Header'
 import HorizontalCards from './partials/HorizontalCards'
+import DropDown from './partials/DropDown'
 
 const Home = () => {
   document.title = "Movies Mosaic | Homepage"
 
   const [wallpaper, setWallpaper] = useState(null);
-  const [trending, setTrending] = useState(null)
+  const [trending, setTrending] = useState(null);
+  const [category, setCategory] = useState("all")
 
   const GetWallpaper = async () => {
     try {
@@ -23,7 +25,7 @@ const Home = () => {
 
   const GetTrending = async () => {
     try {
-      const { data } = await axios.get("trending/all/day");
+      const { data } = await axios.get(`trending/${category}/day`);
       setTrending(data.results);
     } catch (error) {
       console.log(error)
@@ -32,16 +34,26 @@ const Home = () => {
 
   useEffect(() => {
     !wallpaper && GetWallpaper();
-    !trending && GetTrending();
-  }, [])
+    GetTrending(); // Fetch data every time category changes
+  }, [category]) // Add category as dependency
 
   return wallpaper ? (
     <>
-      <SideNav></SideNav>
+      <SideNav />
       <div className='w-[80%] h-full overflow-auto'>
-        <TopNav></TopNav>
-        <Header data={wallpaper} ></Header>
-        <HorizontalCards data={trending}></HorizontalCards>
+        <TopNav />
+        <Header data={wallpaper} />
+
+        <div className="flex justify-between mb-3 pt-6 px-5">
+          <h1 className='text-3xl text-zinc-400 font-semibold'>Trending</h1>
+          <DropDown 
+            title={"Filter"} 
+            options={["tv", "movie", "all"]} 
+            func={(e) => setCategory(e.target.value)} // Correct the category set
+          />
+        </div>
+
+        <HorizontalCards data={trending} />
       </div>
     </>
   ) : <h1 className='text-white'>LOADING...</h1>
