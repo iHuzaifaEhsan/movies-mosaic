@@ -39,9 +39,9 @@ const TopNav = () => {
 
           {searches?.map((s, i) => (
             <Link key={i} className='hover:text-black hover:bg-zinc-300 font-semibold text-zinc-600 p-10 w-[100%] flex justify-start items-center border-zinc-100 border-b-2'>
-              <img 
-              src={s.backdrop_path || s.profile_path || s.logo_path || s.still_path || s.poster_path ? `https://image.tmdb.org/t/p/original/${s.backdrop_path || s.profile_path || s.logo_path || s.still_path || s.poster_path}` : noimage} 
-              className='w-[10vh] h-[10vh] object-cover rounded mr-10 shadow-lg' />
+              <img
+                src={s.backdrop_path || s.profile_path || s.logo_path || s.still_path || s.poster_path ? `https://image.tmdb.org/t/p/original/${s.backdrop_path || s.profile_path || s.logo_path || s.still_path || s.poster_path}` : noimage}
+                className='w-[13vh] h-[13vh] object-cover rounded mr-10 shadow-lg' />
               <span>{s.name || s.title || s.original_name || s.original_title}</span>
             </Link>
           ))}
