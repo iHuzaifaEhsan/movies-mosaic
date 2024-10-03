@@ -28,7 +28,7 @@ const Trending = () => {
 
   return (
 
-    <div className='w-screen h-screen px-[3%] py-3'>
+    <div className='w-screen h-screen px-[3%] py-3 overflow-x-hidden'>
       <div className='w-full flex items-baseline'>
         <i onClick={() => navigate(-1)} className="ri-arrow-left-line hover:text-[#6556CD] cursor-pointer text-2xl text-zinc-400 font-semibold"></i>
         <h1 className='text-2xl text-zinc-400 font-semibold pl-2 cursor-default'>Trending</h1>
