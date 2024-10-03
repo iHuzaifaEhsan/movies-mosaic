@@ -13,11 +13,11 @@ const SideNav = () => {
         <nav className='flex flex-col text-zinc-400 text-xl gap-3'>
           <h1 className='text-white font-semibold text-xl mt-10 mb-2 cursor-pointer'>New Feeds</h1>
 
-          <Link className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
+          <Link to="/trending" className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
             <i className="ri-fire-fill mr-2"></i>
             Trending
           </Link>
-          <Link className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
+          <Link to="/popular" className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
             <i className="ri-magic-fill mr-2"></i>
             Popular
           </Link>
