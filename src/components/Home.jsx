@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from '../utils/axios'
+import Loader from './Loader'
 import SideNav from './partials/SideNav'
 import TopNav from './partials/TopNav'
 import Header from './partials/Header'
@@ -56,7 +57,7 @@ const Home = () => {
         <HorizontalCards data={trending} />
       </div>
     </>
-  ) : <h1 className='text-white'>LOADING...</h1>
+  ) : <Loader></Loader>
 }
 
 export default Home
