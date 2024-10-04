@@ -6,7 +6,7 @@ import noimage from '../../../public/noimage.png'
 const TopNav = () => {
 
   const [query, setquery] = useState("");
-  const [searches, setSearches] = useState()
+  const [searches, setSearches] = useState([])
 
   const GetSearches = async () => {
     try {
