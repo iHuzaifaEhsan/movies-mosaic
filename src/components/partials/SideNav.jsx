@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const SideNav = () => {
 
   const handleRedirect = () => {
-    window.location.href = 'https://huzaifaehsan.netlify.app/'; // External link
+    window.open('https://huzaifaehsan.netlify.app/', '_blank'); // External link
   };
 
   return (
