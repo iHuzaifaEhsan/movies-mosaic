@@ -1,10 +1,19 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SideNav = () => {
 
   const handleRedirect = () => {
     window.open('https://huzaifaehsan.netlify.app/', '_blank'); // External link
+  };
+
+  const handleWhatsAppClick = () => { // Moved function directly into SideNav
+    const phoneNumber = '923236619004'; // Your phone number with country code
+    const message = 'Hi Huzaifa! I am here from your project "Movies Mosaic"...'; // Predefined message
+
+    const encodedMessage = encodeURIComponent(message); // Encodes the message for URL
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank'); // Opens WhatsApp in a new tab
   };
 
   return (
@@ -42,11 +51,11 @@ const SideNav = () => {
           <hr className='bg-zinc-400' />
 
           <h1 className='text-white font-semibold text-xl mt-5 mb-2 cursor-pointer'>Web Info</h1>
-          <Link onClick={() => handleRedirect()} className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
+          <Link onClick={handleRedirect} className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
             <i className="ri-information-fill mr-2"></i>
             About Me
           </Link>
-          <Link className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
+          <Link onClick={handleWhatsAppClick} className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
             <i className="ri-phone-fill mr-2"></i>
             Contact Us
           </Link>
@@ -55,7 +64,7 @@ const SideNav = () => {
 
       </div>
     </>
-  )
-}
+  );
+};
 
-export default SideNav
+export default SideNav;
