@@ -44,7 +44,7 @@ const SideNav = () => {
           <h1 className='text-white font-semibold text-xl mt-5 mb-2 cursor-pointer'>Web Info</h1>
           <Link onClick={() => handleRedirect()} className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
             <i className="ri-information-fill mr-2"></i>
-            About Us
+            About Me
           </Link>
           <Link className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
             <i className="ri-phone-fill mr-2"></i>
