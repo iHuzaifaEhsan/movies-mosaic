@@ -2,6 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const SideNav = () => {
+
+  const handleRedirect = () => {
+    window.location.href = 'https://huzaifaehsan.netlify.app/'; // External link
+  };
+
   return (
     <>
       <div className='w-[20%] h-full border-r-2 border-zinc-500 p-5 overflow-auto'>
@@ -29,7 +34,7 @@ const SideNav = () => {
             <i className="ri-tv-2-fill mr-2"></i>
             Tv Shows
           </Link>
-          <Link className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
+          <Link to="/people" className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
             <i className="ri-team-fill mr-2"></i>
             People
           </Link>
@@ -37,7 +42,7 @@ const SideNav = () => {
           <hr className='bg-zinc-400' />
 
           <h1 className='text-white font-semibold text-xl mt-5 mb-2 cursor-pointer'>Web Info</h1>
-          <Link className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
+          <Link onClick={() => handleRedirect()} className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
             <i className="ri-information-fill mr-2"></i>
             About Us
           </Link>
