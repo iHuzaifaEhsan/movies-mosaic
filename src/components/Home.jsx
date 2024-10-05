@@ -12,7 +12,7 @@ const Home = () => {
 
   const [wallpaper, setWallpaper] = useState(null);
   const [trending, setTrending] = useState(null);
-  const [category, setCategory] = useState("all")
+  const [category, setCategory] = useState("all");
 
   const GetWallpaper = async () => {
     try {

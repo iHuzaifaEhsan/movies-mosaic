@@ -21,11 +21,11 @@ const SideNav = () => {
             <i className="ri-magic-fill mr-2"></i>
             Popular
           </Link>
-          <Link className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
+          <Link to="/movie" className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
             <i className="ri-movie-2-fill mr-2"></i>
             Movies
           </Link>
-          <Link className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
+          <Link to="/tvshows" className='hover:bg-[#6556CD] hover:text-white rounded-lg duration-300 p-4 cursor-pointer'>
             <i className="ri-tv-2-fill mr-2"></i>
             Tv Shows
           </Link>
