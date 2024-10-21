@@ -4,10 +4,9 @@ import DropDown from "./DropDown"
 const HorizontalCards = ({ data }) => {
   return (
     <div className='w-full h-[50vh] p-5'>
-      
 
       <div className='w-full h-[50vh] flex overflow-scroll'>
-        {data.map((d, i) => <div key={i} className='min-w-[25%] h-full mr-5 bg-zinc-900'>
+        {data.map((d, i) => <Link to={`/${d.media_type}/details/${d.id}`} key={i} className='min-w-[25%] h-full mr-5 bg-zinc-900'>
 
           <img className="w-full h-[50%] object-cover" src={`https://image.tmdb.org/t/p/original/${d.backdrop_path || d.profile_path || d.logo_path || d.still_path || d.poster_path}`} alt="" />
 
@@ -17,7 +16,7 @@ const HorizontalCards = ({ data }) => {
             <p className=' mt-2 mb-2 text-white'>{d.overview.slice(0, 80)}....<span className="text-blue-400">more</span> </p>
           </div>
 
-        </div>)}
+        </Link>)}
       </div>
     </div>
   )

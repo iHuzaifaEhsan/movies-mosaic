@@ -7,7 +7,7 @@ const Header = ({ data }) => {
 
       <h1 className='w-[70%] text-5xl font-black text-white'>{data.name || data.title || data.original_name || data.original_title}</h1>
 
-      <p className='w-[70%] mt-3 mb-3 text-white'>{data.overview.slice(0, 200)}....<Link className="text-blue-400">more</Link> </p>
+      <p className='w-[70%] mt-3 mb-3 text-white'>{data.overview.slice(0, 200)}....<Link to={`/${data.media_type}/details/${data.id}`} className="text-blue-400">more</Link> </p>
 
       <p className="text-white gap-x-1">
         <i className="text-yellow-500  ri-megaphone-fill"></i>{data.release_date || "No Information"}

@@ -57,7 +57,7 @@ const Movie = () => {
         </div>
 
         <InfiniteScroll dataLength={movie.length} next={GetMovie} hasMore={hasmore} loader={<h1>WOWOW</h1>}>
-          <Cards data={movie} title={category} />
+          <Cards data={movie} title="movie" />
         </InfiniteScroll>
       </div>
     ) : <Loading />
