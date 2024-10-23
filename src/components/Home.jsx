@@ -11,7 +11,7 @@ const Home = () => {
   document.title = "Movies Mosaic | Homepage"
 
   const [wallpaper, setWallpaper] = useState(null);
-  const [trending, setTrending] = useState(null);
+  const [trending, setTrending] = useState([]);
   const [category, setCategory] = useState("all");
 
   const GetWallpaper = async () => {

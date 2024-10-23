@@ -1,26 +1,39 @@
-import { Link } from "react-router-dom"
-import DropDown from "./DropDown"
+import { Link } from "react-router-dom";
+import DropDown from "./DropDown";
 
 const HorizontalCards = ({ data }) => {
   return (
     <div className='w-full h-[50vh] p-5'>
-
       <div className='w-full h-[50vh] flex overflow-scroll'>
-        {data.map((d, i) => <Link to={`/${d.media_type}/details/${d.id}`} key={i} className='min-w-[25%] h-full mr-5 bg-zinc-900'>
+        {data.map((d) => (
+          <Link to={`/${d.media_type}/details/${d.id}`} key={d.id} className='min-w-[25%] h-full mr-5 bg-zinc-900'>
 
-          <img className="w-full h-[50%] object-cover" src={`https://image.tmdb.org/t/p/original/${d.backdrop_path || d.profile_path || d.logo_path || d.still_path || d.poster_path}`} alt="" />
+            {/* Fallback image to prevent broken links */}
+            <img
+              className="w-full h-[50%] object-cover"
+              src={`https://image.tmdb.org/t/p/original/${d.backdrop_path || d.profile_path || d.logo_path || d.still_path || d.poster_path || 'path-to-default-image.jpg'}`}
+              alt={d.name || d.title || d.original_name || d.original_title || 'No title available'}
+            />
 
-          <div className="px-3">
-            <h1 className='mt-2 text-lg font-black text-white'>{d.name || d.title || d.original_name || d.original_title}</h1>
+            <div className="px-3">
+              {/* Title Fallback */}
+              <h1 className='mt-2 text-lg font-black text-white'>
+                {d.name || d.title || d.original_name || d.original_title || 'Untitled'}
+              </h1>
 
-            <p className=' mt-2 mb-2 text-white'>{d.overview.slice(0, 80)}....<span className="text-blue-400">more</span> </p>
-          </div>
+              {/* Overview with fallback and length check */}
+              <p className='mt-2 mb-2 text-white'>
+                {d.overview ? d.overview.slice(0, 80) : 'No overview available'}
+                {d.overview && d.overview.length > 80 && '....'}
+                <span className="text-blue-400"> more</span>
+              </p>
+            </div>
 
-        </Link>)}
+          </Link>
+        ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HorizontalCards
-
+export default HorizontalCards;
