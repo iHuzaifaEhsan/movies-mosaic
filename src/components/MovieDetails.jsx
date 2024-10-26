@@ -38,7 +38,7 @@ const Moviedetails = () => {
         />
       </div>
 
-{/* Part 3 Available on Plateforms */}
+      {/* Part 3 Available on Plateforms */}
       <div className='w-[80%] bg-red-100'>
         <div className='mt-5'>
           {info.watchproviders && info.watchproviders.flatrate &&
@@ -46,7 +46,6 @@ const Moviedetails = () => {
               <img className='w-[5vh] h-[5vh] object-cover rounde-md' key={i} src={`https://image.tmdb.org/t/p/original/${w.logo_path}`} alt="" />
             ))
           }
-
         </div>
       </div>
     </div>
