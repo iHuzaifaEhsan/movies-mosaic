@@ -11,7 +11,7 @@ const HorizontalCards = ({ data }) => {
             {/* Fallback image to prevent broken links */}
             <img
               className="w-full h-[50%] object-cover"
-              src={`https://image.tmdb.org/t/p/original/${d.backdrop_path || d.profile_path || d.logo_path || d.still_path || d.poster_path || 'path-to-default-image.jpg'}`}
+              src={`https://image.tmdb.org/t/p/original/${d.backdrop_path || d.logo_path || d.still_path || d.profile_path || d.poster_path || 'path-to-default-image.jpg'}`}
               alt={d.name || d.title || d.original_name || d.original_title || 'No title available'}
             />
 
