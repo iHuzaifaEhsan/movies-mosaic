@@ -20,9 +20,10 @@ const App = () => {
         <Route path='/popular' element={<Popular />} />
 
         <Route path='/movie' element={<Movie />} />
-        <Route path='/movie/details/:id' element={<MovieDetails />} />
+        <Route path='/movie/details/:id' element={<MovieDetails />} >
+        <Route path='/movie/details/:id/trailer' element={<Trailer></Trailer>} />
+        </Route>
 
-        <Route path='/movie/details/:id/trailer' element={<Trailer />}></Route>
 
         <Route path='/tvshows' element={<Tvshows />} />
         <Route path='/tv/details/:id' element={<TvDetails />} />
