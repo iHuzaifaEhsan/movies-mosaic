@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import DropDown from "./DropDown";
 
 const HorizontalCards = ({ data }) => {
   return (
     <div className='w-full h-[50vh] p-5'>
       <div className='w-full min-h-[50vh] flex overflow-scroll'>
-        {data.map((d) => (
+        {data.length > 0 ? data.map((d) => (
           <Link to={`/${d.media_type}/details/${d.id}`} key={d.id} className='min-w-[25%] h-full mr-5 bg-zinc-900'>
 
             {/* Fallback image to prevent broken links */}
@@ -30,7 +29,7 @@ const HorizontalCards = ({ data }) => {
             </div>
 
           </Link>
-        ))}
+        )): <h1 className="text-3xl text-white font-black text-center">Nothing to show</h1>}
       </div>
     </div>
   );
