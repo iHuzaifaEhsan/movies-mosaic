@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { asyncloadmovie, removemovie } from '../store/actions/movieActions';
-import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Link, Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import Loading from './Loader'
 import HorizontalCards from './partials/HorizontalCards'
 
@@ -21,10 +21,10 @@ const Moviedetails = () => {
   }, [id]);
 
   return info ? (
-    <div style={{ background: `linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.9)), url(https://image.tmdb.org/t/p/original/${info.detail.backdrop_path})`, backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }} className='w-screen h-screen px-[10%] overflow-x-hidden'>
+    <div style={{ background: `linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.9)), url(https://image.tmdb.org/t/p/original/${info.detail.backdrop_path})`, backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }} className='w-screen h-screen px-[10%] overflow-x-hidden relative'>
 
       {/* Part 1 Navigation */}
-      <nav className='h-[10vh] w-full text-zinc-100 flex gap-10 items-center text-xl'>
+      <nav className='relative h-[10vh] w-full text-zinc-100 flex gap-10 items-center text-xl'>
         <Link onClick={() => navigate(-1)} className="ri-arrow-left-line hover:text-[#6556CD] cursor-pointer text-2xl text-zinc-400 font-semibold"></Link>
         <a target='_blank' href={info.detail.homepage}><i className="ri-external-link-line hover:text-[#6556CD]"></i></a>
         <a target='_blank' href={`https://m.wikidata.org/wiki/${info.externalid.wikidata_id}`}><i className="ri-global-fill hover:text-[#6556CD]"></i></a>
@@ -99,8 +99,7 @@ const Moviedetails = () => {
       <hr className='mb-8'/>
       <h1 className='text-4xl font-bold text-white'>Recommendations & Similar Stuff</h1>
       <HorizontalCards data={info.recommendations.length > 0 ? info.recommendations : info.similar}></HorizontalCards>
-
-
+      <Outlet/>
     </div>
   ) : <Loading></Loading>
 };

@@ -9,6 +9,7 @@ import People from './components/People'
 import MovieDetails from './components/MovieDetails'
 import TvDetails from './components/TvDetails'
 import PersonDetails from './components/PersonDetails'
+import Trailer from './components/partials/Trailer'
 
 const App = () => {
   return (
@@ -20,6 +21,8 @@ const App = () => {
 
         <Route path='/movie' element={<Movie />} />
         <Route path='/movie/details/:id' element={<MovieDetails />} />
+
+        <Route path='/movie/details/:id/trailer' element={<Trailer />}></Route>
 
         <Route path='/tvshows' element={<Tvshows />} />
         <Route path='/tv/details/:id' element={<TvDetails />} />
