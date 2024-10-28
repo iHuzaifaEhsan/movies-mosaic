@@ -6,12 +6,12 @@ const HorizontalCards = ({ data }) => {
     <div className='w-full h-[50vh] p-5'>
       <div className='w-full h-[50vh] flex overflow-y-scroll'>
         {data.length > 0 ? data.map((d) => (
-          <Link to={`/${d.media_type}/details/${d.id}`} key={d.id} className='min-w-[25%] h-full mr-5 bg-zinc-900'>
+          <Link to={`/${d.media_type}/details/${d.id}`} key={d.id} className='min-w-[25%] h-full mr-5 bg-zinc-900 overflow-y-scroll'>
 
             {/* Fallback image to prevent broken links */}
             <img
               className="w-full h-[50%] object-cover"
-              src={ d.backdrop_path || d.logo_path || d.still_path || d.profile_path ? `https://image.tmdb.org/t/p/original/${d.backdrop_path || d.logo_path || d.still_path || d.profile_path}` : noimage}
+              src={d.backdrop_path || d.logo_path || d.still_path || d.profile_path ? `https://image.tmdb.org/t/p/original/${d.backdrop_path || d.logo_path || d.still_path || d.profile_path}` : noimage}
               alt={d.name || d.title || d.original_name || d.original_title || 'No title available'}
             />
 
@@ -30,7 +30,7 @@ const HorizontalCards = ({ data }) => {
             </div>
 
           </Link>
-        )): <h1 className="text-3xl text-white font-black text-center">Nothing to show</h1>}
+        )) : <h1 className="text-3xl text-white font-black text-center">Nothing to show</h1>}
       </div>
     </div>
   );
