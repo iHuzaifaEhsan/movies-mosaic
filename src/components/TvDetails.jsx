@@ -56,7 +56,7 @@ const TvDetails = () => {
           <h1 className='text-xl font-semibold italic text-zinc-200'>{info.detail.tagline}</h1>
           <h1 className='text-2xl font-semibold mt-5 mb-3'>Overview</h1>
           <p>{info.detail.overview}</p>
-          <h1 className='text-2xl font-semibold mt-5 mb-3'>tv Translated</h1>
+          <h1 className='text-2xl font-semibold mt-5 mb-3'>Tv Translated</h1>
           <p className='mb-10'>{info.translations.join(", ")}</p>
           <Link className='p-5 bg-[#6556CD] rounded-lg' to={`${pathname}/trailer`}><i className=" text-2xl mr-3 ri-play-fill"></i>Play Trailer</Link>
         </div>
@@ -103,7 +103,7 @@ const TvDetails = () => {
           <div className='w-[15vh] mr-[13%]' key={i}>
             <img className='h-[40vh] min-w-[15vw] object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)]' src={`https://image.tmdb.org/t/p/original/${s.poster_path}`} alt="" />
             <h1 className='text-2xl text-zinc-300 mt-3 font-semibold'>
-              {s.name || s.original_name || s.original_title}
+              {s.name}
             </h1>
           </div>
         )) : <h1 className='text-3xl mt-5 text-white font-black text-center'>Nothing to show</h1>}

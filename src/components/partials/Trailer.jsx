@@ -13,7 +13,7 @@ const Trailer = () => {
 
      
       <Link onClick={() => navigate(-1)} className="ri-close-large-line hover:text-[#6556CD] cursor-pointer text-2xl text-zinc-400 font-semibold absolute right-[5%] top-[5%]"></Link>
-      {ytvideos ?  <ReactPlayer url={`https://www.youtube.com/watch?v=${ytvideos.key}`} />: <Notfound></Notfound>}
+      {ytvideos ?  <ReactPlayer controls url={`https://www.youtube.com/watch?v=${ytvideos.key}`} />: <Notfound></Notfound>}
       </div>
 
   
