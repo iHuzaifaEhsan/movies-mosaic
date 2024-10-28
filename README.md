@@ -91,9 +91,6 @@ movies-website/
 └── vite.config.js       # Vite configuration
 ```
 
-## 📸 Screenshots
-
-_Add screenshots or GIFs of your website here to showcase its UI and functionality._
 
 ## 🤝 Contributing
 
