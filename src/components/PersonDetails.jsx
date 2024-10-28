@@ -22,9 +22,9 @@ const PersonDetails = () => {
     }
   }, [id]);
   return info ? (
-    <div className='px-[10%] w-screen flex flex-col'>
+    <div className='px-[10%] py-5 w-screen flex flex-col overflow-x-hidden'>
       {/* Part 1 Navigation */}
-      <nav className='relative w-full text-zinc-100 flex gap-10 items-center text-xl'>
+      <nav className='relative w-full text-zinc-100 flex gap-10 items-center text-xl mb-5'>
         <Link onClick={() => navigate(-1)} className="ri-arrow-left-line hover:text-[#6556CD] cursor-pointer text-2xl text-zinc-400 font-semibold"></Link>
       </nav>
 
